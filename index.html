@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Game-Library</title>
 </head>
+
 <body>
     <header>
-        <h1>GAme-Library</h1>
+        <h1>Game-Library</h1>
+        <p>Look back at your video-game archive using this locally hosted Game-Library</p>
     </header>
     <main>
-        <section>
+        <section id="new-game-form">
+            <h2>Create a new entry</h2>
             <form action="/main.js" method="post">
                 <label for="title">Title: </label>
                 <input type="text" name="title" id="title" value="Title" required>
                 <br>
-                <label for="platform">Platform played on (not gen specific): </label>
+                <label for="brief-descr">Brief Description</label>
+                <textarea id="brief-descr" name="brief-descr" rows="4" cols="35"
+                    required>Add a brief description of the game...</textarea>
+                <br>
+                <label for="platform">Platform played on: </label>
                 <select name="platform" id="platform" required>
                     <option value=""> --Please select a platform-- </option>
                     <option value="ps">PlayStation</option>
@@ -24,16 +32,27 @@
                     <option value="Xbox">Xbox</option>
                     <option value="pc">PC/SteamDeck</option>
                     <option value="mobile">Mobile</option>
+                </select>
                 <br>
                 <label for="rating">Rating: </label>
-                <input type="range" id="rating" name="rating" min="1" max="5" step="0.5" required>
+                <select name="rating" id="rating" required>
+                    <option value=""> --Please rate the game-- </option>
+                    <option value="one-star">1</option>
+                    <option value="two-star">2</option>
+                    <option value="three-star">3</option>
+                    <option value="four-star">4</option>
+                    <option value="five-star">5</option>
+                </select>
                 <br>
-                <label for="brief-descr">Brief Description</label>
-                <textarea id="brief-descr" name="brief-descr" rows="4" cols="35" required>Add a brief description of the game...</textarea>
+                <!-- <input type="submit"> -->
             </form>
         </section>
-        
+        <section id="lib-contents">
+
+        </section>
+
     </main>
-    
+
 </body>
+
 </html>
